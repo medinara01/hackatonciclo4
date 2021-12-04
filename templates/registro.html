@@ -7,6 +7,8 @@
     <title>:: BikeClub ::</title>
     <script src="../static/js/js.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../static/js/createClient.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
@@ -30,12 +32,12 @@
             <h2>REGISTRO</h2>
             <form action="">
                 <div class="inputgroup">
-                    <input type="text" placeholder="Nombre" class="nombre">
-                    <input type="email" placeholder="Correo Electronico" class="email">
+                    <input type="text" placeholder="Nombre" id="name">
+                    <input type="email" placeholder="Correo Electronico" id="email">
                 </div>
                 <div class="inputgroup">
-                    <input type="password" placeholder="Contraseña" class="password">
-                    <input type="text" placeholder="Telefono Celular" class="cellPhone">
+                    <input type="password" placeholder="Contraseña" id="password">
+                    <input type="text" placeholder="Telefono Celular" id="cellPhone">
                 </div>
                 <div class="inputgroup">
                     <select name="idtype" id="idtype">
@@ -44,7 +46,7 @@
                         <option value="tarjeta">Tarjeta de Identidad</option>
                         <option value="pasaporte">Pasaporte</option>
                     </select>
-                    <input type="number" placeholder="Numero de Documento" class="documento">
+                    <input type="number" placeholder="Numero de Documento" id="identification">
                 </div>
                 <div class="inputgroup">
                     <select name="city" id="city">
@@ -68,42 +70,44 @@
                         <option value="tarjeta">Tarjeta de Identidad</option>
                         <option value="pasaporte">Pasaporte</option>
                     </select>
-                    <input type="text" placeholder="Direccion" class="address">
+                    <input type="text" placeholder="Direccion" id="address">
                 </div>
                 <div class="inputgroup">
-                    <input type="text" placeholder="facebook" class="facebook">
-                    <input type="text" placeholder="twitter" class="twitter">
+                    <input type="text" placeholder="facebook" id="facebook">
+                    <input type="text" placeholder="twitter" id="twitter" class="twitter">
                 </div>
                 <div class="inputgroup">
-                    <input type="text" placeholder="google" class="google">
-                    <input type="text" placeholder="instagram" class="instagram">
+                    <input type="text" placeholder="google" id="google" class="google">
+                    <input type="text" placeholder="instagram" id="instagram" class="instagram">
                 </div>
                 <form enctype="multipart/form-data" action="uploader.php" method="POST">
                     <input name="uploadedfile" type="file" />
                     <input type="submit" value="Subir archivo" />
                 </form>
                 <input style="opacity:1;" type="checkbox" class= "checkbox" data-required="1" name="terminos"><p style="color:black;padding-left:20px;">Aceptar los <a style="color:blue;" href="#">Términos y Condiciones</a></p>
-                <input type="submit" class="submit" value="REGISTRARSE">
+                <button class="btn btn-primary" onclick="registrar();">Registrar</button>
             </form>        
       </div>
     </div>
+    <footer class="contenedor">
+        <div class="redes-sociales">
+            <div class="contenedor-icono">
+                <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <div class="contenedor-icono">
+                <a href="http://www.facebook.com/falconmasters" target="_blank" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="contenedor-icono">
+                <a href="http://www.instagram.com" target="_blank" class="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
 </body>
-<footer class="contenedor">
-    <div class="redes-sociales">
-        <div class="contenedor-icono">
-            <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-        <div class="contenedor-icono">
-            <a href="http://www.facebook.com/falconmasters" target="_blank" class="facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </div>
-        <div class="contenedor-icono">
-            <a href="http://www.instagram.com" target="_blank" class="instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </div>
-</footer>
+

@@ -132,7 +132,7 @@ body {
   outline: none;
 }
  
-.register .submit{
+.register button{
   display: flex;
   width: 95%;
   padding: 10px;
