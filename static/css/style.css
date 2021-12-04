@@ -8,7 +8,11 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-image: url("img1.jpg");
+  background-image: url("../img/img1.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .navbar{
@@ -65,13 +69,15 @@ body {
   justify-content: center;
   align-items: center;
 }
- 
+
 .login-container{
   display: flex;
   width: 800px;
   height: auto;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
 }
+
+
  
 .register, .login{
   flex: 1;
@@ -88,7 +94,8 @@ body {
   margin-bottom: 30px;
 }
  
-.register input{
+.register input,
+.register select{
   width: 100%;
   padding: 5px;
   font-size: 16px;
@@ -99,23 +106,54 @@ body {
   border-bottom: 1px solid #a8a8a8;
   color: #333;
 }
- 
+
+.register textarea{
+  width: 95%;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  padding: 5px;
+  font-size: 16px;
+}
+.uploadphoto {
+  display: flex;
+  margin: 20px auto;
+  width: 95%;
+}
+
+.register p{
+  color: rgb(99, 247, 118);
+  margin: 20px auto;
+  display: flex;
+  width: 95%;
+}
 .register input:active,
 .register input:focus{
   outline: none;
 }
  
 .register .submit{
-  width: 100%;
+  display: flex;
+  width: 95%;
   padding: 10px;
+  margin: 0 auto;
   background: rgb(99, 247, 118);
   color: #000;
   font-size: 12px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
   cursor: pointer;
+
+}
+
+.register .checkbox{
+  width: 100%;
+  display: flex;
 }
  
-
+.register a{
+  text-decoration: none;
+  color: rgb(99, 247, 118);
+}
  
 .login{
   
@@ -239,4 +277,22 @@ footer .creado-por a:hover {text-decoration: underline;}
 	header .barra-busqueda {
 		width: 100%;
 	}
+}
+
+.reg-container{
+  display: flex;
+  margin: auto;
+  width: 60%;
+  height: auto;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+}
+
+.inputgroup{
+  display: flex;
+}
+.inputgroup input,
+.inputgroup select {
+  display: flex;
+  width: 45%;
+  margin: 20px auto;
 }

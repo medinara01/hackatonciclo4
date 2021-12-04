@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:: BikeClub ::</title>
+    <script src="../static/js/js.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="brand">
+              <h2>Bike<span>Club</span> </h2>
+            </div>
+            <ul class="menu">
+              <li><a class="active" href="../index.html">Home</a></li>
+              <li><a href="buscarbici.html">Buscar bici</a></li>
+              <li><a href="prestarbici.html">Prestar bici</a></li>
+              <li><a href="comunity.html">Mi comunidad</a></li>
+              <li><a href="invita.html">Invita un amigo</a></li>
+            </ul>
+          </nav>
+    </header>
+    <div class="reg-container">
+        <div class="register">
+            <h2>REGISTRO</h2>
+            <form action="">
+                <div class="inputgroup">
+                    <input type="text" placeholder="Nombre" class="nombre">
+                    <input type="email" placeholder="Correo Electronico" class="email">
+                </div>
+                <div class="inputgroup">
+                    <input type="password" placeholder="Contraseña" class="password">
+                    <input type="text" placeholder="Telefono Celular" class="cellPhone">
+                </div>
+                <div class="inputgroup">
+                    <select name="idtype" id="idtype">
+                        <option value="Tipo de Documento">Tipo de documento</option>
+                        <option value="cedula">Cedula de Ciudadanía</option>
+                        <option value="tarjeta">Tarjeta de Identidad</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                    <input type="number" placeholder="Numero de Documento" class="documento">
+                </div>
+                <div class="inputgroup">
+                    <select name="city" id="city">
+                        <option value="city">Ciudad</option>
+                        <option value="cedula">Bogotá</option>
+                        <option value="tarjeta">Medellin</option>
+                        <option value="pasaporte">Barranquilla</option>
+                    </select>
+                    <select name="location" id="location">
+                        <option value="location">Localidad</option>
+                        <option value="cedula">Suba</option>
+                        <option value="tarjeta">Teusaquillo</option>
+                        <option value="pasaporte">Chapinero</option>
+                    </select>
+                    
+                </div>
+                <div class="inputgroup">
+                    <select name="neighborhood" id="neighborhood">
+                        <option value="barrio">Barrio</option>
+                        <option value="cedula">Cedula de Ciudadanía</option>
+                        <option value="tarjeta">Tarjeta de Identidad</option>
+                        <option value="pasaporte">Pasaporte</option>
+                    </select>
+                    <input type="text" placeholder="Direccion" class="address">
+                </div>
+                <div class="inputgroup">
+                    <input type="text" placeholder="facebook" class="facebook">
+                    <input type="text" placeholder="twitter" class="twitter">
+                </div>
+                <div class="inputgroup">
+                    <input type="text" placeholder="google" class="google">
+                    <input type="text" placeholder="instagram" class="instagram">
+                </div>
+                <form enctype="multipart/form-data" action="uploader.php" method="POST">
+                    <input name="uploadedfile" type="file" />
+                    <input type="submit" value="Subir archivo" />
+                </form>
+                <input style="opacity:1;" type="checkbox" class= "checkbox" data-required="1" name="terminos"><p style="color:black;padding-left:20px;">Aceptar los <a style="color:blue;" href="#">Términos y Condiciones</a></p>
+                <input type="submit" class="submit" value="REGISTRARSE">
+            </form>        
+      </div>
+    </div>
+</body>
+<footer class="contenedor">
+    <div class="redes-sociales">
+        <div class="contenedor-icono">
+            <a href="http://www.twitter.com/falconmasters" target="_blank" class="twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <div class="contenedor-icono">
+            <a href="http://www.facebook.com/falconmasters" target="_blank" class="facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <div class="contenedor-icono">
+            <a href="http://www.instagram.com" target="_blank" class="instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
