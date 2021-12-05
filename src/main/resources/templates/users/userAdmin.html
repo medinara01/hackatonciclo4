@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../static/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>El Cangrejo - Clientes</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12 mx-auto border-bottom mt-4">
+            <div class="col-8 mx-auto">
+                <h1 class="col-6 mx-auto c">Clientes Registrados</h1>
+                <h4 class="col-6 mx-auto c">Entrega 2 U. Sergio Arboleda</h4>
+            </div>
+        </div>
+
+        <div id="mensajes" class="alert alert-warning"></div>
+
+        <div class="col-12 mx-auto mt-4">
+            <div class="row">
+                <div class="col-3 mx-auto mt-2 c">
+                    <div class="row">
+                        <button class="btn btn-primary mb-2" id="nuevoRegistro" onclick="activaNuevo()">Registrar Cliente</button>
+                        <hr class="hr">
+                        <a class="btn btn-primary btn-sm mb-2" href="../products/products.html">Lista de Productos</a>
+                        <hr class="hr">
+                        <a class="btn btn-primary mb-2" href="../../index.html"><img src="../../static/img/back.png" alt="Regresar"> Regresar</a>
+                    </div>
+                </div>
+
+                <div class="col-8 mx-auto ">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th colspan="2">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableDataClients">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- ELIMINAR ESTE BUTTON DESPUES DE TESTEOS -->
+            <div class="col-5 mx-auto">
+                <button type="button" class="btn btn-primary" id="liveToastBtn">Test Eliminar</button>
+            </div>
+
+            <!-- PopUp para eliminar registro -->
+            <div class="d-flex justify-content-center align-items-center w-100" style="z-index: 11">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">El Cangrejo</strong>
+                    </div>
+                    <div class="toast-body">
+                        Esta seguro de <strong>ELIMINAR</strong> el registro?
+                        <div class="mt-2 pt-2 border-top">
+                            <button type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--aqui se actualizara el listado del JS -->
+        <div id="listado"></div>
+
+    </div>
+
+    <!-- Seccion para nuevos registros-->
+    <div id="nuevo">
+        <div class="col-5 mx-auto">
+            <h3>Registrar Cliente</h3>
+        </div>
+        <div class="col-5 mx-auto">
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="id" placeholder="Id">
+                <label for="floatingInput">Id</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="name">
+                <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="age" placeholder="age">
+                <label for="floatingInput">Age</label>
+            </div>
+            <div class="col-8 mt-3">
+                <button class="btn btn-primary" onclick="registrar();">Guardar</button>
+                <button class="btn btn-primary" onclick="estadoInicial();">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seccion para editar registros-->
+    <div id="editar">
+        <div class="col-5 mx-auto">
+            <h3>Editar Cliente</h3>
+        </div>
+        <div class="col-5 mx-auto">
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="idEdit" placeholder="Id">
+                <label for="floatingInput">Id</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nameEdit" placeholder="name">
+                <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="emailEdit" placeholder="email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="ageEdit" placeholder="age">
+                <label for="floatingInput">Age</label>
+            </div>
+            <div class="col-8 mt-3">
+                <button class="btn btn-primary" onclick="actualizar();">Guardar</button>
+                <button class="btn btn-primary" onclick="estadoInicial();">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../../static/js/client/createClient.js"></script>
+<script src="../../static/js/client/readClients.js"></script>
+<script src="../../static/js/client/updateClient.js"></script>
+<script src="../../static/js/client/deleteClient.js"></script>
+<script src="../../static/js/client/functionsClients.js"></script>
+<script>
+    var toastTrigger = document.getElementById('liveToastBtn')
+    var toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+        toastTrigger.addEventListener('click', function () {
+            var toast = new bootstrap.Toast(toastLiveExample)
+
+            toast.show()
+        })
+    }
+</script>
+</html>
