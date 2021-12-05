@@ -1,11 +1,11 @@
 function readUser(llaveId) {
-    console.log(llaveId)
+    console.log("llaveId")
     let datos = {
         id: llaveId
     }
     
     $.ajax({
-        url: "http://193.122.165.100:8080/api/Client/" + llaveId,
+        url: "http://193.122.165.100:8080/api/user/" + llaveId,
         type: "GET",
         contentType: "application/JSON",
         dataType: 'json',
@@ -14,8 +14,10 @@ function readUser(llaveId) {
         },
 
         success: function (respuesta) {
+            alert("entro al success")
             console.log("respuesta:", respuesta)
-            //loadClients(respuesta);
+
+            loadClients(respuesta);
             
         },
 
