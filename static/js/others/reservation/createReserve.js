@@ -1,26 +1,21 @@
 function registrar() {
     let datos={
-        name: $("#name").val(),
-        email: $("#email").val(),
-        password: $("#password").val(),
-        cellPhone: $("#cellPhone").val(),
-        idtype: $("#idtype").val(),
-        identification: $("#identification").val(),
-        city: $("#city").val(),
-        location: $("#location").val(),
-        neighborhood: $("#neighborhood").val(),
-        address: $("#address").val(),
-        facebook: $("#facebook").val(),
-        twitter: $("#twitter").val(),
-        google: $("#google").val(),
-        instagram: $("#instagram").val(),
+        client:{"idClient":$("#client").val()},
+        farm:{"id":$("#farm").val()},
+        startDate :$("#startDate").val(),
+        devolutionDate :$("#devolutionDate").val(),
+        status :$("#status").val(),
+        score :$("#score").val()
     }
 
     let datosPeticion = JSON.stringify(datos);
 
+    console.log(datosPeticion);
+
     if (validar()){
         $.ajax({
-            url: "http://193.122.165.100:8080/api/Client/save",
+            url: "http://localhost:8080/api/Reservation/save",
+            //url: "http://150.230.40.244:8080/api/Reservation/save",
             type: 'POST',
             contentType:"application/json",
             dataType: 'JSON',
@@ -30,6 +25,7 @@ function registrar() {
             },
 
             success: function (respuesta) {
+                console.log(respuesta);
                 $("#mensajes").show(1000);
                 $("#mensajes").html("Registro ingresado...");
                 $("#mensajes").hide(1000);
