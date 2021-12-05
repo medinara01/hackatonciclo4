@@ -3,7 +3,7 @@ function registrar() {
         brand: $("#brand").val(),
         type: $("#type").val(),
         rin: $("#rin").val(),
-        serial: $("#serial").val(),
+        serialNumber: $("#serialNumber").val(),
         description: $("#description").val()
         
     }
@@ -12,7 +12,7 @@ function registrar() {
 
     if (validar()){
         $.ajax({
-            url: "http://193.122.165.100:8080/api/Client/save",
+            url: "http://193.122.165.100:8080/api/bike/new",
             type: 'POST',
             contentType:"application/json",
             dataType: 'JSON',
@@ -25,8 +25,7 @@ function registrar() {
                 $("#mensajes").show(1000);
                 $("#mensajes").html("Registro ingresado...");
                 $("#mensajes").hide(1000);
-                listar();
-                estadoInicial();
+                console.log("Se creo Registro", datosPeticion)
             },
 
             error: function (xhr, status) {

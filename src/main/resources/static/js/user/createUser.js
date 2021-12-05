@@ -20,7 +20,7 @@ function registrar() {
 
     if (validar()){
         $.ajax({
-            url: "http://193.122.165.100:8080/api/Client/save",
+            url: "http://193.122.165.100:8080/api/user/new",
             type: 'POST',
             contentType:"application/json",
             dataType: 'JSON',
@@ -33,8 +33,9 @@ function registrar() {
                 $("#mensajes").show(1000);
                 $("#mensajes").html("Registro ingresado...");
                 $("#mensajes").hide(1000);
-                listar();
-                estadoInicial();
+                console.log("Se creo el registro",datosPeticion)
+                // listar();
+                // estadoInicial();
             },
 
             error: function (xhr, status) {
